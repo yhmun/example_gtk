@@ -11,7 +11,6 @@ project('example_gtk', 'cpp',
 cxx = meson.get_compiler('cpp')
 proj_args = cxx.get_supported_arguments(
     '-Wno-unused-parameter',
-    '-Wno-deprecated-declarations',
 )
 add_project_arguments(proj_args, language: 'cpp')
 

@@ -1,4 +1,4 @@
-#include <gtk/gtk.h>
+#include "common.h"
 
 static void print_hello(GtkWidget *widget, gpointer user_data)
 {
@@ -8,7 +8,7 @@ static void print_hello(GtkWidget *widget, gpointer user_data)
 static void activate(GtkApplication* app, gpointer user_data)
 {
     auto window = gtk_application_window_new(app);
-    gtk_window_set_title(GTK_WINDOW(window), "Button");
+    gtk_window_set_title(GTK_WINDOW(window), "Window");
     gtk_window_set_default_size(GTK_WINDOW(window), 200, 200);
 
     auto button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL);
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 {
     g_print("Start application..\n");
 
-    auto app = gtk_application_new("org.gtk.example", G_APPLICATION_FLAGS_NONE);
+    auto app = gtk_application_new("org.gtk.example", app_flags);
     g_signal_connect(app, "activate", G_CALLBACK(activate), nullptr);
 
     auto status = g_application_run(G_APPLICATION(app), argc, argv);
