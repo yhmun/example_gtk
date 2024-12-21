@@ -29,6 +29,10 @@ apps = [
            'name': 'button',
         'sources': ['button.cpp'],
     },
+    {
+           'name': 'grid',
+        'sources': ['grid.cpp'],
+    },
 ]
 
 foreach app : apps
